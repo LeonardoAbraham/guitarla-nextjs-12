@@ -3,7 +3,10 @@ import Layout from "../components/layout"
 
 const Nosotros = () => {
     return (
-        <Layout>
+        <Layout
+            title={'Nosotros'}
+            description={'Sobre nosotros, guitarLA, tienda de música'}
+        >
             <Link href={"/"}>Ir a inicio</Link>
         </Layout>
 

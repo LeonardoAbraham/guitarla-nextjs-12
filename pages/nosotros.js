@@ -7,7 +7,7 @@ const Nosotros = () => {
             title={'Nosotros'}
             description={'Sobre nosotros, guitarLA, tienda de música'}
         >
-            <Link href={"/"}>Ir a inicio</Link>
+            <h1>Nosotros</h1>
         </Layout>
 
     )

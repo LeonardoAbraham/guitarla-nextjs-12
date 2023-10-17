@@ -3,7 +3,7 @@ import Image from "next/future/image"
 import styles from "../../styles/guitarras.module.css"
 import Layout from "../../components/layout"
 
-const Producto = ({guitarra}) => {
+const Producto = ({guitarra, agregarCarrito}) => {
     const [cantidad, setCantidad] = useState(0);
     const { nombre, descripcion, imagen, precio } = guitarra[0].attributes;
 
@@ -24,7 +24,9 @@ const Producto = ({guitarra}) => {
             cantidad
         }
 
-        console.log(guitarraSeleccionada)
+        // Pasando la información
+        agregarCarrito(guitarraSeleccionada)
+
     }
 
     return (
@@ -73,7 +75,7 @@ export async function getStaticPaths(){
     const respuesta = await fetch(`${process.env.API_URL}/guitarras`)
     const {data} = await respuesta.json()
 
-    const paths = data.map(guitarra => ({
+    const paths = data?.map(guitarra => ({
         params: {
             url:guitarra.attributes.url
         }
